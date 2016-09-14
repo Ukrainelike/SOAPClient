@@ -1,91 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ukrainelike.soapclient.MainActivity">
 
-    <TextView
-        android:text="@string/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="83dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="83dp"
-        android:id="@+id/textView"
-        android:textSize="18sp"
-        android:fontFamily="sans-serif" />
 
-    <TextView
-        android:text="@string/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:id="@+id/Login"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_alignBottom="@+id/Login"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/LoginDate"
-        android:inputType="textEmailAddress" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:layout_below="@+id/LoginDate"
+                android:layout_alignLeft="@+id/LoginDate"
+                android:layout_alignStart="@+id/LoginDate"
+                android:layout_alignRight="@id/LoginDate"
+                android:layout_alignEnd="@id/LoginDate"
+                android:layout_marginTop="20dp"
+                android:id="@+id/PasswordData"
+                android:hint="@string/Password" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Login"
-        android:layout_alignLeft="@+id/Login"
-        android:layout_alignStart="@+id/Login"
-        android:layout_marginTop="32dp"
-        android:id="@+id/password"
-        android:text="@string/Password" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="47dp"
+                android:id="@+id/error_message"
+                android:layout_below="@+id/PasswordData"
+                android:textAlignment="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/LoginDate"
-        android:layout_alignLeft="@+id/LoginDate"
-        android:layout_alignStart="@+id/LoginDate"
-        android:layout_marginTop="19dp"
-        android:id="@+id/PasswordData" />
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/error_message"
+                android:layout_marginTop="30dp"
+                android:id="@+id/progressBar2"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:id="@+id/error_message"
-        android:layout_below="@+id/PasswordData"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/LoginDate"
+                android:inputType="textEmailAddress"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
 
-    <Button
-        android:text="@string/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/LoginButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+                android:layout_marginTop="40dp"
+                android:hint="@string/login" />
 
-</RelativeLayout>
+            <TextView
+                android:text="@string/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"/>
+
+            <Button
+                android:text="@string/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/LoginButton"
+                android:layout_below="@+id/progressBar2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="50dp" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
